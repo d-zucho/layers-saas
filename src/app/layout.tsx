@@ -9,9 +9,10 @@ const inter = Inter({
     axes: ["opsz"],
 });
 
+
 export const metadata: Metadata = {
-    title: "Modern Design Tool Landing Page",
-    description: "Created with the help of Frontend Tribe",
+    title: "Layers - Modern Design",
+    description: "A tool that enables you to master modern design.",
 };
 
 export default function RootLayout({
@@ -20,12 +21,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body
-                className={`${inter.variable} font-sans antialiased bg-neutral-950 text-white`}
-            >
-                {children}
-            </body>
+      <html lang="en">
+          <body
+            className={`${inter.variable} font-sans antialiased bg-neutral-950 text-white`}
+          >
+            {children}
+          </body>
         </html>
     );
 }
