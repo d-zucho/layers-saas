@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import logoImage from '@/assets/images/logo.svg'
+import Button from "@/components/Button";
+import Link from "next/link";
 
 const navLinks = [
 	{label: "Home", href: "#"},
@@ -10,20 +12,27 @@ const navLinks = [
 
 export default function Navbar() {
 	return (
-		<section className={'py-4'}>
-			<div className={'container'}>
+		<section className={'py-4 lg:py-8'}>
+			<div className={'container max-w-5xl'}>
 				<div
-					className="grid grid-cols-2 border border-white/15 rounded-full p-2 px-4
-					items-center">
+					className="grid grid-cols-2 lg:grid-cols-3 border border-white/15 rounded-full p-2 px-4
+					md:px-2 items-center">
 					<div>
 						<Image
 							src={logoImage}
 							alt={'Layers logo'}
-							className={'h-9 w-auto'}
+							className={'h-9 md:h-auto w-auto'}
 						/>
 					</div>
+					<div className={'hidden lg:flex justify-center items-center'}>
+						<nav className={'flex gap-6 font-medium'}>
+							{navLinks.map(link => (
+								<a href={link.href} key={link.label}>{link.label}</a>
+							))}
+						</nav>
+					</div>
 
-					<div className={'flex justify-end'}>
+					<div className={'flex justify-end items-center gap-4'}>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 								 viewBox="0 0 24 24" fill="none" stroke="currentColor"
 								 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -33,9 +42,8 @@ export default function Navbar() {
 							<line x1="3" y1="18" x2="21" y2="18"></line>
 						</svg>
 
-						<button className={'border border-white h-12 rounded-full px-6' +
-							' font-medium'}>Log In</button>
-						<button>Sign Up</button>
+						<Button variant={'secondary'} className={'hidden md:inline'}>Log In</Button>
+						<Button variant={'primary'} className={'hidden md:inline'}>Sign Up</Button>
 					</div>
 				</div>
 			</div>
