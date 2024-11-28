@@ -1,0 +1,13 @@
+/node_modules
+node_modules
+dist
+
+.next
+/.next
+
+
+# environment variables
+*/.env.local
+*/.env
+.env.local
+.env
