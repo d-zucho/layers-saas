@@ -43,8 +43,8 @@ export default function Hero() {
 					name="email"
 					id="email"
 					placeholder={'Enter your email'}
-					className={'bg-transparent pl-4 focus:outline-none max-w-[200px]' +
-						' md:max-w-full'}
+					className={'bg-transparent pl-4 focus:outline-none' +
+						' md:max-w-full w-full'}
 				/>
 
 				<Button type="submit" size={'sm'} variant={'primary'} className={'whitespace-nowrap'}>Sign Up</Button>
